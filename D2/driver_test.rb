@@ -132,7 +132,7 @@ class DriverTest < Minitest::Test
     def mock_location.next_location; @test_next_location; end
     def print_transition(mock_location, test_next_location); 0; end 
 
-    refute_nil iterate(mock_prospector, mock_location, 2)
+    refute_nil iterate(mock_prospector, mock_location, 1)
 
     assert_mock mock_prospector
   end
