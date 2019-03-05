@@ -15,5 +15,6 @@ if exit_code.zero?
   locations[6].neighbors = [locations[4], locations[5]]
   prospectors = initialize_prospectors num_prospectors # initialize a list of prospectors
   run_program num_prospectors, prospectors, locations, num_turns # run the program
+else
+  exit(exit_code)
 end
-exit(exit_code)

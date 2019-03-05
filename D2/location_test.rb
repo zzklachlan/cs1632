@@ -11,7 +11,8 @@ class LocationTest < Minitest::Test
   # We will re-use the @l instance variable in each method
   # This was we don't have to type l = Location::new in each test
   def setup
-    @mock_prng = Minitest::Mock.new("test prng")
+    #@mock_prng = Minitest::Mock.new("test prng")
+    @mock_prng = Random.new(33)
     @l = Location::new  "Main Location", 5, 5, @mock_prng
   end
   
@@ -41,7 +42,7 @@ class LocationTest < Minitest::Test
     val = @l.num_rubies
     assert_equal val, 2
 
-    assert_mock @mock_prng
+    #assert_mock @mock_prng
   end
 
   # UNIT TEST FOR METHOD num_fake_rubies
@@ -53,7 +54,7 @@ class LocationTest < Minitest::Test
     val = @l.num_fake_rubies
     assert_equal val, 1
 
-    assert_mock @mock_prng
+    #assert_mock @mock_prng
   end
 
   # UNIT TEST FOR METHOD add_neighbor

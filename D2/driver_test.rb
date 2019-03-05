@@ -14,7 +14,7 @@ class DriverTest < Minitest::Test
   # This was we don't have to type p = Prospector::new or 
   # l = Location::new in each test
   def setup
-    @mock_prng = Minitest::Mock.new("test prng")
+    @mock_prng = Random.new(33)
     @l = Location::new  "Main Location", 5, 5, @mock_prng
     @p = Prospector::new
   end
@@ -127,9 +127,10 @@ class DriverTest < Minitest::Test
     test_next_location = Minitest::Mock.new("next location")
 
     def mock_prospector.incre_num_turns; 0; end
-    def mock_prospector.num_turns; 0; end
+    def mock_prospector.num_turns; 1; end
     def prospect(mock_prospector, mock_location); [0,0]; end
-    def mock_location.next_location; @test_next_location; end
+    def mock_location.next_location; self; end
+    def @test_next_location.next_location; @test_next_location; end
     def print_transition(mock_location, test_next_location); 0; end 
 
     refute_nil iterate(mock_prospector, mock_location, 1)

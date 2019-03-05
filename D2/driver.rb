@@ -70,7 +70,7 @@ def prospect(curr_prospector, curr_location)
 end
 
 # Print the movement form the current location to the next one
-def pritn_transition(old_location, curr_location)
+def print_transition(old_location, curr_location)
   puts "Heading from #{old_location.name} to #{curr_location.name}."
 end
 
@@ -84,7 +84,7 @@ def iterate(curr_prospector, curr_location, num_turns)
 
     old_location = curr_location
     curr_location = old_location.next_location
-    pritn_transition old_location, curr_location
+    print_transition old_location, curr_location
   end
   curr_location
 end
