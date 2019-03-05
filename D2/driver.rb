@@ -83,8 +83,8 @@ def iterate(curr_prospector, curr_location, num_turns)
     break if curr_prospector.num_turns == num_turns
 
     old_location = curr_location
-    curr_location = curr_location.next_location
-    pritn_transition old_location
+    curr_location = old_location.next_location
+    pritn_transition old_location, curr_location
   end
   curr_location
 end
