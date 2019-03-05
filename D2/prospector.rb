@@ -33,19 +33,7 @@ class Prospector
     @num_turns += 1
   end
 
-  # def iterate(curr_prospector, curr_location, num_turns)
-  #   loop do
-  #     prospect curr_prospector, curr_location
-  #     curr_prospector.incre_num_turns
-
-  #     break if curr_prospector.num_turns == num_turns
-
-  #     old_location = curr_location
-  #     curr_location = curr_location.next_location
-  #     puts "Heading from #{old_location.name} to #{curr_location.name}."
-  #   end
-  # end
-
+  # Display the result of a prospection
   def result(final_rubies)
     if final_rubies >= 10
       puts 'Going home victorious!'

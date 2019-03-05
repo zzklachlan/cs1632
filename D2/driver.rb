@@ -69,6 +69,7 @@ def prospect(curr_prospector, curr_location)
   [rubies, fake_rubies]
 end
 
+# Print the movement form the current location to the next one
 def pritn_transition(old_location, curr_location)
   puts "Heading from #{old_location.name} to #{curr_location.name}."
 end
