@@ -14,11 +14,15 @@ class ProspectorTest < Minitest::Test
     @p = Prospector::new
   end
 
+  # UNIT TEST FOR METHOD Prospector.new
+  # The new Location object should not be null
   def test_new_Prospector_not_nil
     refute_nil @p
     assert_kind_of Prospector, @p
   end
 
+  # UNIT TEST FOR METHOD the constructor
+  # Check if the constructor set all variables correctly
   def test_constructor
     assert_equal @p.num_days, 0
     assert_equal @p.num_turns, 0

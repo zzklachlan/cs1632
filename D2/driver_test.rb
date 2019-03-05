@@ -19,12 +19,16 @@ class DriverTest < Minitest::Test
     @p = Prospector::new
   end
   
+  # UNIT TEST FOR METHOD initialize_locations(prng)
+  # This test 
   def test_initialize_locations
     assert_equal initialize_locations(@mock_prng).count, 7
   end
 
   # UNIT TEST FOR METHOD initialize_prospectors(num_prospectors)
   # stub Prospector.new method
+  # This test should check whether the initialize_prospectors can
+  # return an array of prospectors with given size
   def test_initialize_prospectors
     def Prospector.new; Minitest::Mock.new("test prospector"); end
     assert_equal initialize_prospectors(5).count, 5
@@ -72,13 +76,12 @@ class DriverTest < Minitest::Test
     assert_equal display_fake_rubies(5), '5 fake rubies'
   end
 
-  # def test_modify_rubies
-  #   modify @p, 2, 0
-  #   assert_equal @p.num_rubies, 2
-  # end
 
   # UNIT TEST FOR METHOD prospect
-  # stub
+  # stub the methods used in prospect
+  # This test should check whether a prospector can find pseudorandom
+  # number of rubies and fake rubies
+  # STUB METHOD
   def test_prospect
     mock_prospector = Minitest::Mock.new("prospector")
     mock_location = Minitest::Mock.new("location")
@@ -96,11 +99,9 @@ class DriverTest < Minitest::Test
     assert_mock mock_prospector
   end
 
-  def test_iterate
-    mock_prospector = Minitest::Mock.new("prospector")
-    mock_location = Minitest::Mock.new("location")
-  end
-
+  # UNIT TEST FOR METHOD check_valid
+  # This test should print usage because the length if the argumens is less than 3
+  # EDGE CASE
   def test_check_invalid
     assert_equal check_valid([2, 1]), [1, nil, nil, nil]
     assert_output ("Usage:
@@ -110,10 +111,16 @@ class DriverTest < Minitest::Test
       *num_turns* should be a non-negative integer\n") {check_valid([2, 1])}
   end
 
+  # This test should return the precise array containing
+  # exit code, seed, number of prospectors, and number of turns
   def test_check_valid
     assert_equal check_valid([2, '1', '5']), [0, 2, 1, 5]
   end
 
+  # UNIT TEST FOR METHOD iterate(curr_prospector, curr_location, num_turns)
+  # This test should check whether a prospector can prospect 
+  # a given location with given number of turns 
+  # STUB METHOD
   def test_iterate
     mock_prospector = Minitest::Mock.new("prospector")
     mock_location = Minitest::Mock.new("location")
@@ -121,9 +128,9 @@ class DriverTest < Minitest::Test
 
     def mock_prospector.incre_num_turns; 0; end
     def mock_prospector.num_turns; 0; end
-    def prospect(mock_prospector, mock_location); 0; end
-    def mock_location.next_location; mock_next_location; end
-    #def mock_next_location.next_location; mocl_next_location; end
+    def prospect(mock_prospector, mock_location); [0,0]; end
+    def mock_location.next_location; @test_next_location; end
+    def print_transition(mock_location, test_next_location); 0; end 
 
     refute_nil iterate(mock_prospector, mock_location, 2)
 

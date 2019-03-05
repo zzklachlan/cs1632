@@ -15,11 +15,15 @@ class LocationTest < Minitest::Test
     @l = Location::new  "Main Location", 5, 5, @mock_prng
   end
   
+  # UNIT TEST FOR METHOD Location.new
+  # The new Location object should not be null
   def test_new_location_not_nil
     refute_nil @l
     assert_kind_of Location, @l
   end
 
+  # UNIT TEST FOR METHOD the constructor
+  # Check if the constructor set all variables correctly
   def test_constructor
     assert_equal @l.name, 'Main Location'
     assert_equal @l.max_rubies, 5
@@ -30,6 +34,8 @@ class LocationTest < Minitest::Test
 
   # UNIT TEST FOR METHOD num_rubies
   # double the random class, stub the rand method
+  # This method should return a positive number of rubies
+  # STUB METHOD
   def test_num_rubies_mock
     def @mock_prng.rand(x); 2; end
     val = @l.num_rubies
@@ -40,6 +46,8 @@ class LocationTest < Minitest::Test
 
   # UNIT TEST FOR METHOD num_fake_rubies
   # double the random class, stub the rand method
+  # This method should return a positive number of fake rubies
+  # STUB METHOD
   def test_num_fake_rubies_mock
     def @mock_prng.rand(x); 1; end
     val = @l.num_fake_rubies
@@ -50,6 +58,7 @@ class LocationTest < Minitest::Test
 
   # UNIT TEST FOR METHOD add_neighbor
   # test whether a neighbor can be added
+  # This method should add one neighbor to any location object
   def test_add_neighbor
     test_neighbor = Location::new "test neighbor", 3, 3, @mock_prng
     assert_kind_of Location, test_neighbor
@@ -59,7 +68,9 @@ class LocationTest < Minitest::Test
   end
 
   # UNIT TEST FOR METHOD next_location
-  # stub the rand method and test whether the next_location method can get a neighbor of the current location
+  # stub the rand method and 
+  # test whether the next_location method can get a neighbor of the current location
+  # STUB METHOD
   def test_next_location
     test_neighbor = Location::new "test neighbor", 3, 3, @mock_prng
     @l.add_neighbor(test_neighbor)
@@ -72,6 +83,7 @@ class LocationTest < Minitest::Test
   end
 
   # Try to get next location when the current location has no neighbors
+  # An exception should raise
   # EDGE CASE
   def test_next_location_with_no_neighbor
    assert_raises "This location has no neighbors." do

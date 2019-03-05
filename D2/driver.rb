@@ -1,6 +1,7 @@
 require_relative './location.rb'
 require_relative './prospector.rb'
 
+# Initialize the array of locations
 def initialize_locations(prng)
   locations = []
   locations[0] = Location.new('Enumerable Canyon', 1, 1, prng)
@@ -13,6 +14,7 @@ def initialize_locations(prng)
   locations
 end
 
+# Initialize the array of prospectors
 def initialize_prospectors(num_prospectors)
   prospectors = []
   (0...num_prospectors).each do |x|
@@ -21,28 +23,31 @@ def initialize_prospectors(num_prospectors)
   prospectors
 end
 
+# Display the number of rubies
 def display_rubies(rubies)
   result = ''
-  result + if rubies.zero?
+  result + if rubies.zero? # If no fake rubies
              'no rubies'
-           elsif rubies == 1
+           elsif rubies == 1 # If only one fake ruby
              '1 ruby'
            else
-             "#{rubies} rubies"
+             "#{rubies} rubies" # If multiple fake rubies
            end
 end
 
+# Display the number of fake rubies
 def display_fake_rubies(fake_rubies)
   result = ''
-  result + if fake_rubies.zero?
+  result + if fake_rubies.zero? # If no fake rubies
              'no fake rubies'
-           elsif fake_rubies == 1
+           elsif fake_rubies == 1 # If only one fake ruby
              '1 fake ruby'
            else
-             "#{fake_rubies} fake rubies"
+             "#{fake_rubies} fake rubies" # If multiple fake rubies
            end
 end
 
+# For a prospector, do a single turn
 def prospect(curr_prospector, curr_location)
   rubies = 0
   fake_rubies = 0
@@ -64,6 +69,11 @@ def prospect(curr_prospector, curr_location)
   [rubies, fake_rubies]
 end
 
+def pritn_transition(old_location, curr_location)
+  puts "Heading from #{old_location.name} to #{curr_location.name}."
+end
+
+# For a prospector, finish all the turns
 def iterate(curr_prospector, curr_location, num_turns)
   loop do
     prospect curr_prospector, curr_location
@@ -73,13 +83,14 @@ def iterate(curr_prospector, curr_location, num_turns)
 
     old_location = curr_location
     curr_location = curr_location.next_location
-    puts "Heading from #{old_location.name} to #{curr_location.name}."
+    pritn_transition old_location
   end
   curr_location
 end
 
+# Check if the arguments are valid
 def check_valid(args)
-  if args.count != 3 || args[1].to_i.zero?|| args[2].to_i.zero?
+  if args.count != 3 || args[1].to_i.zero? || args[2].to_i.zero?
     puts "Usage:
       ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*
       *seed* should be an integer
@@ -90,6 +101,7 @@ def check_valid(args)
   [0, args[0].to_i, args[1].to_i, args[2].to_i]
 end
 
+# Play the game
 def run_program(num_prospectors, prospectors, locations, num_turns)
   (0...num_prospectors).each do |n|
     puts "Rubyist #{n + 1} starting in Enumerable Canyon."
