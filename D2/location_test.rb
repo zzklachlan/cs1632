@@ -61,18 +61,18 @@ class LocationTest < Minitest::Test
   # UNIT TEST FOR METHOD next_location
   # stub the rand method and test whether the next_location method can get a neighbor of the current location
   def test_next_location
-    def @mock_prng.rand(x); 0; end
     test_neighbor = Location::new "test neighbor", 3, 3, @mock_prng
     @l.add_neighbor(test_neighbor)
 
+    def @mock_prng.rand(x); 0; end
     test_next_location = @l.next_location
 
     refute_nil test_next_location
     assert_kind_of Location, test_next_location
   end
 
-  # Edge Case 
   # Try to get next location when the current location has no neighbors
+  # EDGE CASE
   def test_next_location_with_no_neighbor
    assert_raises "This location has no neighbors." do
     test_neighbor = Location::new "test neighbor", 3, 3, @mock_prng

@@ -13,27 +13,6 @@ def initialize_locations(prng)
   locations
 end
 
-def construct_graph(locations)
-  locations[0].add_neighbor(locations[1])
-  locations[0].add_neighbor(locations[2])
-  locations[1].add_neighbor(locations[0])
-  locations[1].add_neighbor(locations[4])
-  locations[2].add_neighbor(locations[3])
-  locations[2].add_neighbor(locations[0])
-  locations[2].add_neighbor(locations[4])
-  locations[3].add_neighbor(locations[2])
-  locations[3].add_neighbor(locations[5])
-  locations[4].add_neighbor(locations[2])
-  locations[4].add_neighbor(locations[1])
-  locations[4].add_neighbor(locations[5])
-  locations[4].add_neighbor(locations[6])
-  locations[5].add_neighbor(locations[4])
-  locations[5].add_neighbor(locations[3])
-  locations[5].add_neighbor(locations[6])
-  locations[6].add_neighbor(locations[4])
-  locations[6].add_neighbor(locations[5])
-end
-
 def initialize_prospectors(num_prospectors)
   prospectors = []
   (0...num_prospectors).each do |x|
@@ -64,12 +43,6 @@ def display_fake_rubies(fake_rubies)
            end
 end
 
-def modify(curr_prospector, rubies, fake_rubies)
-  curr_prospector.incre_num_rubies rubies
-  curr_prospector.incre_num_fake_rubies fake_rubies
-  curr_prospector.incre_num_days
-end
-
 def prospect(curr_prospector, curr_location)
   rubies = 0
   fake_rubies = 0
@@ -77,7 +50,9 @@ def prospect(curr_prospector, curr_location)
     rubies = curr_location.num_rubies
     fake_rubies = curr_location.num_fake_rubies
 
-    modify curr_prospector, rubies, fake_rubies
+    curr_prospector.incre_num_rubies rubies
+    curr_prospector.incre_num_fake_rubies fake_rubies
+    curr_prospector.incre_num_days
 
     if rubies.zero? && fake_rubies.zero?
       puts "\tFound no rubies or no fake rubies in #{curr_location.name}."
@@ -86,6 +61,7 @@ def prospect(curr_prospector, curr_location)
       puts "\tFound #{display_rubies rubies} and #{display_fake_rubies fake_rubies} in #{curr_location.name}."
     end
   end
+  [rubies, fake_rubies]
 end
 
 def iterate(curr_prospector, curr_location, num_turns)
@@ -99,22 +75,27 @@ def iterate(curr_prospector, curr_location, num_turns)
     curr_location = curr_location.next_location
     puts "Heading from #{old_location.name} to #{curr_location.name}."
   end
+  curr_location
 end
 
-def check_valid
-  raise 'Enter integers for seed, the number of prospectors, and number of turns at command line' unless ARGV.count == 3
-
-  # seed = arg1.to_i
-  # num_prospectors = arg2.to_i
-  # num_turns = arg3.to_i
+def check_valid(args)
+  if args.count != 3 || args[1].to_i.zero?|| args[2].to_i.zero?
+    puts "Usage:
+      ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*
+      *seed* should be an integer
+      *num_prospectors* should be a non-negative integer
+      *num_turns* should be a non-negative integer"
+    return [1, nil, nil, nil]
+  end
+  [0, args[0].to_i, args[1].to_i, args[2].to_i]
 end
 
-def run_program(prospectors, locations, num_turns)
-  (0...prospectors.count).each do |n|
+def run_program(num_prospectors, prospectors, locations, num_turns)
+  (0...num_prospectors).each do |n|
     puts "Rubyist #{n + 1} starting in Enumerable Canyon."
     iterate prospectors[n], locations[0], num_turns
     puts "After #{prospectors[n].num_days} days, Rubyist #{n + 1} found:"
     puts "\t#{display_rubies prospectors[n].num_rubies}.\n\t#{display_fake_rubies prospectors[n].num_fake_rubies}."
-    prospectors[n].result
+    prospectors[n].result(prospectors[n].num_rubies)
   end
 end

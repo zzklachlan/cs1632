@@ -6,6 +6,10 @@ require_relative 'prospector'
 
 class ProspectorTest < Minitest::Test
 
+  # Special method!
+  # This will run the following code before each test
+  # We will re-use the @p instance variable in each method
+  # This was we don't have to type p = Prospector::new in each test
   def setup
     @p = Prospector::new
   end
@@ -41,6 +45,7 @@ class ProspectorTest < Minitest::Test
   end
 
   # If not a number
+  # EDGE CASE
   def test_not_a_num_rubies
     @p.incre_num_rubies('non-number')
     assert_equal @p.num_rubies, 0
@@ -65,16 +70,19 @@ class ProspectorTest < Minitest::Test
   end
 
   # If not a number
+  # EDGE CASE
   def test_not_a_num_fake_rubies
     @p.incre_num_fake_rubies('non-number')
     assert_equal @p.num_fake_rubies, 0
   end
 
+  # UNIT TEST FOR METHOD incre_num_fake_rubies(x)
   def test_incre_num_days
     @p.incre_num_days
     assert_equal @p.num_days, 1
   end
 
+  # UNIT TEST FOR METHOD incre_num_fake_rubies(x)
   def test_incre_num_turns
     @p.incre_num_turns
     assert_equal @p.num_turns, 1
@@ -88,19 +96,16 @@ class ProspectorTest < Minitest::Test
 
   # If num_rubies >= 10
   def test_victorious_result
-    @p.num_rubies = 10
-    assert_output("Going home victorious!\n") {@p.result}
+    assert_output("Going home victorious!\n") {@p.result(10)}
   end
 
   # If num_rubies == 0
   def test_empty_handed_result
-    @p.num_rubies = 0
-    assert_output("Going home empty-handed.\n") {@p.result}
+    assert_output("Going home empty-handed.\n") {@p.result(0)}
   end
 
   # If 0 < num_rubies < 10
   def test_sad_result
-    @p.num_rubies = 1
-    assert_output("Going home sad.\n") {@p.result}
+    assert_output("Going home sad.\n") {@p.result(1)}
   end
 end
