@@ -11,50 +11,35 @@ class LocationTest < Minitest::Test
   # We will re-use the @l instance variable in each method
   # This was we don't have to type l = Location::new in each test
   def setup
-    #@mock_prng = Minitest::Mock.new("test prng")
-    @mock_prng = Random.new(33)
+    @mock_prng = Minitest::Mock.new("test prng")
     @l = Location::new  "Main Location", 5, 5, @mock_prng
   end
   
   # UNIT TEST FOR METHOD Location.new
-  # The new Location object should not be null
+  # The new Location object should not be null and shoule be a location object
   def test_new_location_not_nil
     refute_nil @l
     assert_kind_of Location, @l
-  end
-
-  # UNIT TEST FOR METHOD the constructor
-  # Check if the constructor set all variables correctly
-  def test_constructor
-    assert_equal @l.name, 'Main Location'
-    assert_equal @l.max_rubies, 5
-    assert_equal @l.max_fake_rubies, 5
-    assert_equal @l.prng, @mock_prng
-    refute_nil @l.neighbors
   end
 
   # UNIT TEST FOR METHOD num_rubies
   # double the random class, stub the rand method
   # This method should return a positive number of rubies
   # STUB METHOD
-  def test_num_rubies_mock
+  def test_num_rubies
     def @mock_prng.rand(x); 2; end
     val = @l.num_rubies
     assert_equal val, 2
-
-    #assert_mock @mock_prng
   end
 
   # UNIT TEST FOR METHOD num_fake_rubies
   # double the random class, stub the rand method
   # This method should return a positive number of fake rubies
   # STUB METHOD
-  def test_num_fake_rubies_mock
+  def test_num_fake_rubies
     def @mock_prng.rand(x); 1; end
     val = @l.num_fake_rubies
     assert_equal val, 1
-
-    #assert_mock @mock_prng
   end
 
   # UNIT TEST FOR METHOD add_neighbor

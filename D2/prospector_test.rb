@@ -21,75 +21,40 @@ class ProspectorTest < Minitest::Test
     assert_kind_of Prospector, @p
   end
 
-  # UNIT TEST FOR METHOD the constructor
-  # Check if the constructor set all variables correctly
-  def test_constructor
-    assert_equal @p.num_days, 0
-    assert_equal @p.num_turns, 0
-    assert_equal @p.num_rubies, 0
-    assert_equal @p.num_fake_rubies, 0
+  # If no rubies found
+  def test_display_no_rubies
+    assert_equal @p.display_rubies(0), 'no rubies'
   end
 
-  # UNIT TEST FOR METHOD incre_num_rubies(x)
-  # Equivalence classes:
-  # x= -INFINITY..-1 -> subtract x
-  # x= 0..INFINITY -> add x
-  # x= (not a number) -> no change
-
-  # If the number of rubies is negative
-  def test_incre_negative_num_rubies
-    @p.incre_num_rubies(-1)
-    assert_equal @p.num_rubies, -1
+  # If one ruby found
+  def test_display_one_rubies
+    assert_equal @p.display_rubies(1), '1 ruby'
   end
 
-  # If the number of rubies is positive
-  def test_incre_positive_num_rubies
-    @p.incre_num_rubies(1)
-    assert_equal @p.num_rubies, 1
-  end
-
-  # If not a number
-  # EDGE CASE
-  def test_not_a_num_rubies
-    @p.incre_num_rubies('non-number')
-    assert_equal @p.num_rubies, 0
+  # If multiple rubies found
+  def test_display_multiple_rubies
+    assert_equal @p.display_rubies(5), '5 rubies'
   end
 
   # UNIT TEST FOR METHOD incre_num_fake_rubies(x)
   # Equivalence classes:
-  # x= -INFINITY..-1 -> subtract x
-  # x= 0..INFINITY -> add x
-  # x= (not a number) -> no change
+  # x= 0 -> returns 'no fake rubies'
+  # x= 1 -> returns '1 fake ruby'
+  # x= 2..INFINITY -> returns '#{x} fake rubies'
 
-  # If the number of fake rubies is negative
-  def test_incre_negative_num_fake_rubies
-    @p.incre_num_fake_rubies(-1)
-    assert_equal @p.num_fake_rubies, -1
+  # If no fake rubies found
+  def test_display_no_fake_rubies
+    assert_equal @p.display_fake_rubies(0), 'no fake rubies'
   end
 
-  # If the number of fake rubies is postive
-  def test_incre_positive_num_fake_rubies
-    @p.incre_num_fake_rubies(1)
-    assert_equal @p.num_fake_rubies, 1
+  # If one fake ruby found
+  def test_display_one_fake_rubies
+    assert_equal @p.display_fake_rubies(1), '1 fake ruby'
   end
 
-  # If not a number
-  # EDGE CASE
-  def test_not_a_num_fake_rubies
-    @p.incre_num_fake_rubies('non-number')
-    assert_equal @p.num_fake_rubies, 0
-  end
-
-  # UNIT TEST FOR METHOD incre_num_fake_rubies(x)
-  def test_incre_num_days
-    @p.incre_num_days
-    assert_equal @p.num_days, 1
-  end
-
-  # UNIT TEST FOR METHOD incre_num_fake_rubies(x)
-  def test_incre_num_turns
-    @p.incre_num_turns
-    assert_equal @p.num_turns, 1
+  # If multiple fake rubies found
+  def test_display_multiple_fake_rubies
+    assert_equal @p.display_fake_rubies(5), '5 fake rubies'
   end
 
   # UNIT TEST FOR METHOD result
@@ -97,6 +62,7 @@ class ProspectorTest < Minitest::Test
   # num_rubies= 10..INFINITY -> returns 'Going home victorious!'
   # num_rubies= 0 -> returns 'Going home empty-handed.'
   # num_rubies= 0..9 -> returns 'Going home sad.'
+  # num_rubies= -INFINITY...0 -> returns '
 
   # If num_rubies >= 10
   def test_victorious_result
@@ -111,5 +77,47 @@ class ProspectorTest < Minitest::Test
   # If 0 < num_rubies < 10
   def test_sad_result
     assert_output("Going home sad.\n") {@p.result(1)}
+  end
+
+  # If num_rubies < 0
+  # EDGE CASE
+  def test_negative_result
+    assert_output("The number of rubies should be non negative.\n") {@p.result(-1)}
+  end
+
+  # UNIT TEST FOR METHOD prospect
+  # stub the methods used in prospect
+  # This test should check whether a prospector can find pseudorandom
+  # number of rubies and fake rubies
+  # STUB METHOD
+  def test_prospect
+    mock_location = Minitest::Mock.new("location")
+
+    def mock_location.num_rubies; 0; end
+    def mock_location.num_fake_rubies; 0; end
+    def mock_location.name; "mock"; end
+
+    assert_equal @p.num_rubies, 0
+    assert_equal @p.num_fake_rubies, 0
+    assert_output("\tFound no rubies or no fake rubies in mock.\n") {@p.prospect(mock_location)}
+
+    assert_mock mock_location
+  end
+
+  # UNIT TEST FOR METHOD iterate(curr_prospector, curr_location, num_turns)
+  # This test should check whether a prospector can prospect 
+  # a given location with given number of turns 
+  # STUB METHOD
+  def test_iterate
+    mock_location = Minitest::Mock.new("mock")
+
+    def @p.prospect(mock_location); nil; end
+    def mock_location.next_location; self; end
+    def mock_location.name; 'mock'; end
+
+    @p.iterate(@p, mock_location, 2)
+    assert_equal @p.num_turns, 2
+
+    assert_mock mock_location
   end
 end
