@@ -30,15 +30,28 @@ class DriverTest < Minitest::Test
   end
 
   # UNIT TEST FOR METHOD check_valid
-  # This test should print usage because the length if the argumens is less than 3
+  # This test should print usage because the length 
+  # Equivalence classes:
+  # [2, 1] -> args length < 3
+  # [2, 1, 0] -> num_of_turns == 0
+  # [2, 0, 1] -> num_of_prospectors == 0
+
+  # If the argumens is less than 3
   # EDGE CASE
-  def test_check_invalid
+  def test_check_invalid_length
     assert_equal check_valid([2, 1]), [1, nil, nil, nil]
-    assert_output ("Usage:
-      ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*
-      *seed* should be an integer
-      *num_prospectors* should be a non-negative integer
-      *num_turns* should be a non-negative integer\n") {check_valid([2, 1])}
+  end
+
+  # If num_of_turns == 0
+  # EDGE CASE
+  def test_check_invalid_turns
+    assert_equal check_valid([2, 1, 0]), [1, nil, nil, nil]
+  end
+
+  # If num_of_prospectors == 0
+  # EDGE CASE
+  def test_check_invalid_prospectors
+    assert_equal check_valid([2, 0, 1]), [1, nil, nil, nil]
   end
 
   # This test should return the precise array containing

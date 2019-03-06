@@ -49,8 +49,8 @@ def check_valid(args)
     puts "Usage:
       ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*
       *seed* should be an integer
-      *num_prospectors* should be a non-negative integer
-      *num_turns* should be a non-negative integer"
+      *num_prospectors* should be a postive integer
+      *num_turns* should be a positive integer"
     return [1, nil, nil, nil]
   end
   [0, args[0].to_i, args[1].to_i, args[2].to_i]
