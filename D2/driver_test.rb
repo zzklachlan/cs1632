@@ -5,7 +5,7 @@ require 'minitest/autorun'
 require_relative 'driver'
 
 class DriverTest < Minitest::Test
-  # UNIT TEST FOR METHOD initialize_locations(prng)
+  # UNIT TEST FOR METHOD initialize_locations(seed)
   # This test 
   def test_initialize_locations
     assert_equal initialize_locations(1234).count, 7
