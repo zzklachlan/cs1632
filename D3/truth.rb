@@ -16,8 +16,8 @@ def check_params(ts, fs, size)
   is_valid
 end
 
-get '/display' do
-  
+post '/display' do
+  erb :display
 end
 
 get '/' do
