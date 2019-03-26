@@ -16,6 +16,10 @@ def check_params(ts, fs, size)
   is_valid
 end
 
+get '/display' do
+  
+end
+
 get '/' do
   ts = params['ts']
   fs = params['fs']
