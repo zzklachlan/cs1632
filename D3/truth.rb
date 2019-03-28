@@ -1,12 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-not_found do 
-  #is_valid = true
-  status 404
-  erb :error, :locals => {is_valid: true}
-end
-
 def check_params(ts, fs, size)
   puts 'check_params called..'
   return false if ts.nil? || fs.nil? || size.nil?
@@ -45,7 +39,6 @@ def display_and(truth_table, row, ts, fs, size)
   (1...size.to_i).each do |n|
     result &= truth_table[row][n]
   end
-  puts result
   val = ts if result == true
   val = fs if result == false
   val
@@ -57,7 +50,6 @@ def display_or(truth_table, row, ts, fs, size)
   (1...size.to_i).each do |n|
     result |= truth_table[row][n]
   end
-  puts result
   val = ts if result == true
   val = fs if result == false
   val
@@ -69,7 +61,6 @@ def display_nand(truth_table, row, ts, fs, size)
   (1...size.to_i).each do |n|
     result &= truth_table[row][n]
   end
-  puts result
   val = ts if result == false
   val = fs if result == true
   val
@@ -81,13 +72,13 @@ def display_nor(truth_table, row, ts, fs, size)
   (1...size.to_i).each do |n|
     result |= truth_table[row][n]
   end
-  puts result
   val = ts if result == false
   val = fs if result == true
   val
 end
 
-post '/display' do
+get '/display' do
+  puts "in display.."
   ts = params['ts']
   fs = params['fs']
   size = params['size']
@@ -98,15 +89,19 @@ post '/display' do
 
   puts params
   if check_params(ts, fs, size)
+    puts "params good"
     erb :display, :locals => { ts: ts, fs: fs, size: size}
   else
-    #is_valid = false
-    status 404
-    erb :error, :locals => {is_valid: false}
-    # not_found
+    puts "params bad" 
+    erb :error_params
   end
 end
 
 get '/' do
   erb :index
+end
+
+not_found do 
+  status 404
+  erb :error_address
 end
