@@ -1,39 +1,112 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-is_valid = true
+not_found do 
+  #is_valid = true
+  status 404
+  erb :error, :locals => {is_valid: true}
+end
 
 def check_params(ts, fs, size)
-  if !ts.nil? && ts.length != 1
+  puts 'check_params called..'
+  return false if ts.nil? || fs.nil? || size.nil?
+  if ts.length != 1
     is_valid = false
-  elsif !fs.nil? && fs.length != 1
+  elsif fs.length != 1
+    puts 'cp: 2'
     is_valid = false
-  elsif !ts.nil? && !fs.nil? && ts == fs
+  elsif ts == fs
+    puts 'cp: 3'
     is_valid = false
-  # elsif !size.nil? && size.to_i < 2
-  #   is_valid = false
+  elsif size.to_i < 2
+    puts 'cp: 4'
+    is_valid = false
+  else
+    puts 'cp: 5'
+    is_valid = true
   end
+  puts "returning #{is_valid}"
   is_valid
 end
 
-post '/display' do
-  erb :display
+def const_array(ts, fs, size)
+  pair = [fs, ts]
+  pair.repeated_permutation(size.to_i).to_a
 end
 
-get '/' do
+def const_tru_table(size)
+  pair = [false, true]
+  pair.repeated_permutation(size.to_i).to_a
+end
+
+def display_and(truth_table, row, ts, fs, size)
+  result = truth_table[row][0]
+  val = nil
+  (1...size.to_i).each do |n|
+    result &= truth_table[row][n]
+  end
+  puts result
+  val = ts if result == true
+  val = fs if result == false
+  val
+end
+
+def display_or(truth_table, row, ts, fs, size)
+  result = truth_table[row][0]
+  val = nil
+  (1...size.to_i).each do |n|
+    result |= truth_table[row][n]
+  end
+  puts result
+  val = ts if result == true
+  val = fs if result == false
+  val
+end
+
+def display_nand(truth_table, row, ts, fs, size)
+  result = truth_table[row][0]
+  val = nil
+  (1...size.to_i).each do |n|
+    result &= truth_table[row][n]
+  end
+  puts result
+  val = ts if result == false
+  val = fs if result == true
+  val
+end
+
+def display_nor(truth_table, row, ts, fs, size)
+  result = truth_table[row][0]
+  val = nil
+  (1...size.to_i).each do |n|
+    result |= truth_table[row][n]
+  end
+  puts result
+  val = ts if result == false
+  val = fs if result == true
+  val
+end
+
+post '/display' do
   ts = params['ts']
   fs = params['fs']
   size = params['size']
 
-  # if !size.nil?
-  #   puts "----------#{size.to_i}-------------"
-  # end
+  ts = 'T' if ts == ''
+  fs = 'F' if fs == ''
+  size = '3' if size == ''
 
-  # puts "-----------#{is_valid}-----------------"
-  if check_params ts, fs, size == false
-    status 404
-    erb :error
+  puts params
+  if check_params(ts, fs, size)
+    erb :display, :locals => { ts: ts, fs: fs, size: size}
   else
-    erb :index, :locals => { ts: ts, fs: fs, size: size}
+    #is_valid = false
+    status 404
+    erb :error, :locals => {is_valid: false}
+    # not_found
   end
+end
+
+get '/' do
+  erb :index
 end

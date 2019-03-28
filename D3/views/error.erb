@@ -2,14 +2,25 @@
   <head></head>
   <body>
     <h1>
-    ERROR
+    ERROR<br>
+    <%= is_valid %>
     </h1>
-    <h2>
-      Here is some info:
-    </h2>
-    <p>
-      The data you entered are invalid
-    <p>
+    <% if !(is_valid) %>
+        <h2>
+        Invalid parameters.  
+        </h2>
+        <p>
+        Please enter:<br>
+            1. A single-character true symbol<br>
+            2. A single-character false symbol<br>
+            3. A size greater than or equal to 2<br>
+            4. Differents characters for the true and false symbols.
+        <p>
+    <% else %>
+        <h2>
+            Invalid address.
+        </h2>
+    <% end %>
     <a href="/">Back to main</a>
   </body>
 </html>

@@ -1,9 +1,41 @@
 <html>
   <head></head>
   <body>
-    <p>
-      Just to test
-    </p>
+    <table>
+      <thead>
+        <tr>
+          <% s = size.to_i-1 %>
+          <% while s >= 0%>
+            <th><%= s %></th>
+            <% s -= 1 %> 
+          <% end %>
+          <th id="and" scope="col">AND</th>
+          <th id="or" scope="col">OR</th>
+          <th id="nand" scope="col">NAND</th>
+          <th id="nor" scope="col">NOR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% table = const_array(ts, fs, size) %>
+        <% truth_table = const_tru_table(size) %>
+        <% n = 0 %>
+        <% while n < 2 ** size.to_i %>
+          <tr>
+            <% i = 0 %>
+            <% while i < size.to_i %>
+              <td><%= table[n][i] %></td>
+              <% i += 1 %>
+            <% end %>
+            <td><%= display_and(truth_table, n, ts, fs, size)%></td>
+            <td><%= display_or(truth_table, n, ts, fs, size)%></td>
+            <td><%= display_nand(truth_table, n, ts, fs, size)%></td>
+            <td><%= display_nor(truth_table, n, ts, fs, size)%></td>
+          </tr>
+          <% n += 1 %>
+        <% end %>
+      </tbody>
+    </table>
+    <a href="/">Back to main page</a>
   </body>
 </html>
   
