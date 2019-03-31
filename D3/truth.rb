@@ -77,6 +77,28 @@ def display_nor(truth_table, row, ts, fs, size)
   val
 end
 
+def display_xor(truth_table, row, ts, fs, size)
+  result = 0
+  val = nil
+  (0...size.to_i).each do |n|
+    result += 1 if truth_table[row][n] == true
+  end
+  val = ts if (result%2) == 1
+  val = fs if (result%2) == 0
+  val
+end
+
+def display_single(truth_table, row, ts, fs, size)
+  result = 0
+  val = nil
+  (0...size.to_i).each do |n|
+    result += 1 if truth_table[row][n] == true
+  end
+  val = ts if result == 1
+  val = fs if result != 1
+  val
+end
+
 get '/display' do
   puts "in display.."
   ts = params['ts']

@@ -13,6 +13,8 @@
           <th id="or" scope="col">OR</th>
           <th id="nand" scope="col">NAND</th>
           <th id="nor" scope="col">NOR</th>
+          <th id="xor" scope="col">XOR</th>
+          <th id="single" scope="col">SINGLE</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +32,8 @@
             <td><%= display_or(truth_table, n, ts, fs, size)%></td>
             <td><%= display_nand(truth_table, n, ts, fs, size)%></td>
             <td><%= display_nor(truth_table, n, ts, fs, size)%></td>
+            <td><%= display_xor(truth_table, n, ts, fs, size)%></td>
+            <td><%= display_single(truth_table, n, ts, fs, size)%></td>
           </tr>
           <% n += 1 %>
         <% end %>
