@@ -8,81 +8,81 @@
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">INVALID_ADDRESS_TEST</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/invalid<datalist><option>http://localhost:4567/</option><option>http://localhost:4567/invalid</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid address.</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">INVALID_ADDRESS_BACK_MAIN_TEST</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/invalid<datalist><option>http://localhost:4567/invalid</option><option>http://localhost:4567/</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>link=Back to main<datalist><option>link=Back to main</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid address.'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::a[1]</option><option>//a[contains(text(),'Back to main')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_BACK_MAIN_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">INDEX_DISPLAY_TEST</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>link=Back to main page<datalist><option>link=Back to main page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::a[1]</option><option>//a[contains(text(),'Back to main page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::label[1]</option><option>//label[3]</option></datalist></td><td>Size (2^x):</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
 </tr>
 <tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::label[2]</option><option>//label[2]</option></datalist></td><td>False sysmbol:</td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::label[1]</option><option>//label[3]</option></datalist></td><td>Size (2^x):</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_DEFAULT_TEST1</td></tr>
+<tr><td rowspan="1" colspan="3">INDEX_SUBMIT_TEST</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>trr</td>
+</tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[4]</option><option>//th</option><option>css=th</option></datalist></td><td>2</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[2]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[3]/preceding::td[2]</option><option>//td</option><option>css=td</option></datalist></td><td>F</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[34]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[34]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[33]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[31]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[32]/preceding::td[2]</option><option>//tr[8]/td</option></datalist></td><td>T</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid parameters.'])[1]/preceding::h1[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid parameters.'])[1]/preceding::h1[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h1[1]</option><option>//h1</option><option>css=h1</option></datalist></td><td>ERROR</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_DEFAULT_TEST2</td></tr>
+<tr><td rowspan="1" colspan="3">RELOAD_PAGE_TEST</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+<tr><td>click</td><td>link=Reload page<datalist><option>link=Reload page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::a[1]</option><option>//a[contains(text(),'Reload page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[33]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[33]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[32]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[35]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/preceding::td[2]</option><option>//tr[8]/td[5]</option></datalist></td><td>T</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[1]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[5]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[6]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[7]/preceding::td[2]</option><option>//td[7]</option></datalist></td><td>T</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[35]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[2]</option><option>//tr[8]/td[8]</option></datalist></td><td>T</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[1]</option><option>//tr[8]/td[9]</option></datalist></td><td>F</td>
+<tr><td>assertText</td><td>link=Reload page<datalist><option>link=Reload page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::a[1]</option><option>//a[contains(text(),'Reload page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td>Reload page</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_DATA_TEST1</td></tr>
+<tr><td rowspan="1" colspan="3">INVALID_TRUE_SYMBOL_TEST</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>trr</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">INVALID_FALSE_SYMBOL_TEST</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>FII</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">INVALID_SAME_SYMBOLS_TEST</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
@@ -93,101 +93,43 @@
 </tr>
 <tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
-</tr>
-<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>t</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[80]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[80]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[70]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[72]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[73]/preceding::td[2]</option><option>//tr[16]/td</option></datalist></td><td>t</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[2]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[5]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[6]/preceding::td[2]</option><option>//td[4]</option></datalist></td><td>f</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[30]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[30]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[42]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[32]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[43]/preceding::td[2]</option><option>//tr[8]/td[3]</option></datalist></td><td>t</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_DATA_TEST2</td></tr>
+<tr><td rowspan="1" colspan="3">INVALID_SIZE_TEST1</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
-<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
-</tr>
-<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
-</tr>
 <tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>test</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[4]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[4]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[6]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[1]/preceding::td[2]</option><option>//td[5]</option></datalist></td><td>f</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[75]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[75]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[74]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[81]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[82]/preceding::td[2]</option><option>//tr[16]/td[6]</option></datalist></td><td>t</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[6]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[6]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[13]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[14]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[15]/preceding::td[2]</option><option>//tr[2]/td[10]</option></datalist></td><td>t</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_HEAD_TEST1</td></tr>
+<tr><td rowspan="1" colspan="3">INVALID_SIZE_TEST2</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
-<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
-</tr>
-<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
-</tr>
 <tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>1</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[4]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[5]</option><option>//th</option><option>css=th</option></datalist></td><td>3</td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[2]</option><option>//th[4]</option></datalist></td><td>0</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_HEAD_TEST2</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
-</tr>
-<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
-</tr>
-<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
-</tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>id=and<datalist><option>id=and</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/preceding::th[2]</option><option>//th[@id='and']</option><option>//th[5]</option><option>css=#and</option></datalist></td><td>AND</td>
-</tr>
-<tr><td>assertText</td><td>id=nand<datalist><option>id=nand</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/preceding::th[2]</option><option>//th[@id='nand']</option><option>//th[7]</option><option>css=#nand</option></datalist></td><td>NAND</td>
-</tr>
-<tr><td>assertText</td><td>id=single<datalist><option>id=single</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[2]/preceding::th[1]</option><option>//th[@id='single']</option><option>//th[10]</option><option>css=#single</option></datalist></td><td>SINGLE</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
@@ -248,39 +190,7 @@
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">INVALID_SIZE_TEST1</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>test</td>
-</tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">INVALID_SIZE_TEST2</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>1</td>
-</tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">INVALID_SAME_SYMBOLS_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_HEAD_TEST1</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
@@ -291,63 +201,201 @@
 </tr>
 <tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>t</td>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[4]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[5]</option><option>//th</option><option>css=th</option></datalist></td><td>3</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[2]</option><option>//th[4]</option></datalist></td><td>0</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">INVALID_FALSE_SYMBOL_TEST</td></tr>
-</thead>
-<tbody>
-<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
-</tr>
-<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
-</tr>
-<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>FII</td>
-</tr>
-<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
-</tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
-</tr>
-</tbody></table>
-<table cellpadding="1" cellspacing="1" border="1">
-<thead>
-<tr><td rowspan="1" colspan="3">INVALID_TRUE_SYMBOL_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_HEAD_TEST2</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
 <tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>trr</td>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid parameters.</td>
+<tr><td>assertText</td><td>id=and<datalist><option>id=and</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/preceding::th[2]</option><option>//th[@id='and']</option><option>//th[5]</option><option>css=#and</option></datalist></td><td>AND</td>
+</tr>
+<tr><td>assertText</td><td>id=nand<datalist><option>id=nand</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/preceding::th[2]</option><option>//th[@id='nand']</option><option>//th[7]</option><option>css=#nand</option></datalist></td><td>NAND</td>
+</tr>
+<tr><td>assertText</td><td>id=single<datalist><option>id=single</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[2]/preceding::th[1]</option><option>//th[@id='single']</option><option>//th[10]</option><option>css=#single</option></datalist></td><td>SINGLE</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">RELOAD_PAGE_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_DATA_TEST1</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
-<tr><td>click</td><td>link=Reload page<datalist><option>link=Reload page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::a[1]</option><option>//a[contains(text(),'Reload page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>link=Reload page<datalist><option>link=Reload page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::a[1]</option><option>//a[contains(text(),'Reload page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td>Reload page</td>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[80]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[80]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[70]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[72]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[73]/preceding::td[2]</option><option>//tr[16]/td</option></datalist></td><td>t</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[2]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[5]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[6]/preceding::td[2]</option><option>//td[4]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[30]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[30]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[42]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[32]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[43]/preceding::td[2]</option><option>//tr[8]/td[3]</option></datalist></td><td>t</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">INDEX_DISPLAY_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">DISPLAY_TABLE_DATA_TEST2</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>t</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[4]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[4]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[3]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[6]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[1]/preceding::td[2]</option><option>//td[5]</option></datalist></td><td>f</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[75]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[75]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[74]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[81]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[82]/preceding::td[2]</option><option>//tr[16]/td[6]</option></datalist></td><td>t</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[6]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='t'])[6]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[13]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[14]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='f'])[15]/preceding::td[2]</option><option>//tr[2]/td[10]</option></datalist></td><td>t</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DISPLAY_DEFAULT_TEST1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[4]</option><option>//th</option><option>css=th</option></datalist></td><td>2</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[2]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[3]/preceding::td[2]</option><option>//td</option><option>css=td</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[34]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[34]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[33]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[31]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[32]/preceding::td[2]</option><option>//tr[8]/td</option></datalist></td><td>T</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DISPLAY_DEFAULT_TEST2</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[33]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[33]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[32]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[35]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/preceding::td[2]</option><option>//tr[8]/td[5]</option></datalist></td><td>T</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[1]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[1]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[5]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[6]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[7]/preceding::td[2]</option><option>//td[7]</option></datalist></td><td>T</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[35]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[2]</option><option>//tr[8]/td[8]</option></datalist></td><td>T</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[36]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[1]</option><option>//tr[8]/td[9]</option></datalist></td><td>F</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DISPLAY_BACK_MAIN_TEST</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Back to main page<datalist><option>link=Back to main page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::a[1]</option><option>//a[contains(text(),'Back to main page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::label[1]</option><option>//label[3]</option></datalist></td><td>Size (2^x):</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::label[2]</option><option>//label[2]</option></datalist></td><td>False sysmbol:</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">INVALID_ADDRESS_TEST</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/invalid<datalist><option>http://localhost:4567/</option><option>http://localhost:4567/invalid</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::h2[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h2[1]</option><option>//h2</option><option>css=h2</option></datalist></td><td>Invalid address.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">INVALID_ADDRESS_BACK_MAIN_TEST</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/invalid<datalist><option>http://localhost:4567/invalid</option><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Back to main<datalist><option>link=Back to main</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid address.'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='ERROR'])[1]/following::a[1]</option><option>//a[contains(text(),'Back to main')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT1_TEST1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>id=xor<datalist><option>id=xor</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[1]/preceding::th[2]</option><option>//th[@id='xor']</option><option>//th[8]</option><option>css=#xor</option></datalist></td><td>XOR</td>
+</tr>
+<tr><td>assertText</td><td>id=single<datalist><option>id=single</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[2]/preceding::th[1]</option><option>//th[@id='single']</option><option>//th[9]</option><option>css=#single</option></datalist></td><td>SINGLE</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT1_TEST2</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Back to main page<datalist><option>link=Back to main page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::a[1]</option><option>//a[contains(text(),'Back to main page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
 </tr>
 <tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
 </tr>
@@ -358,18 +406,184 @@
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">INDEX_SUBMIT_TEST</td></tr>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT1_TEST3</td></tr>
 </thead>
 <tbody>
 <tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
 </tr>
 <tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
 </tr>
-<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>trr</td>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>0</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
 </tr>
 <tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
 </tr>
-<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid parameters.'])[1]/preceding::h1[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Invalid parameters.'])[1]/preceding::h1[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h1[1]</option><option>//h1</option><option>css=h1</option></datalist></td><td>ERROR</td>
+<tr><td>assertText</td><td>id=xor<datalist><option>id=xor</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[1]/preceding::th[2]</option><option>//th[@id='xor']</option><option>//th[8]</option><option>css=#xor</option></datalist></td><td>XOR</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[9]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[9]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[9]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[152]</option><option>//td[9]</option></datalist></td><td>0</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[29]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[29]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[29]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[132]</option><option>//tr[3]/td[9]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[29]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[29]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[29]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[132]</option><option>//tr[3]/td[9]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[149]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[149]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[149]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[12]</option><option>//tr[15]/td[9]</option></datalist></td><td>1</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT1_TEST4</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>0</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>4</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>id=single<datalist><option>id=single</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::th[1]</option><option>//th[@id='single']</option><option>//th[10]</option><option>css=#single</option></datalist></td><td>SINGLE</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[10]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[10]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[10]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[151]</option><option>//td[10]</option></datalist></td><td>0</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[20]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[20]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[20]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[141]</option><option>//tr[2]/td[10]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[150]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[150]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[150]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[11]</option><option>//tr[15]/td[10]</option></datalist></td><td>0</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT2_TEST1</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td>test</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[5]</option><option>//input[@value='Save']</option><option>//input[5]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:4567/save/test<datalist><option>http://localhost:4567/</option><option>http://localhost:4567/save/test</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[4]</option><option>//th</option><option>css=th</option></datalist></td><td>2</td>
+</tr>
+<tr><td>assertText</td><td>id=and<datalist><option>id=and</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/preceding::th[2]</option><option>//th[@id='and']</option><option>//th[4]</option><option>css=#and</option></datalist></td><td>AND</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[3]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[3]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[2]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[5]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[1]/preceding::td[2]</option><option>//td[4]</option></datalist></td><td>F</td>
+</tr>
+<tr><td>assertText</td><td>id=nand<datalist><option>id=nand</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/preceding::th[2]</option><option>//th[@id='nand']</option><option>//th[6]</option><option>css=#nand</option></datalist></td><td>NAND</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[5]/following::td[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[5]/following::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[4]/following::td[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[2]/preceding::td[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[6]/preceding::td[2]</option><option>//td[6]</option></datalist></td><td>T</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT2_TEST2</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=ts<datalist><option>name=ts</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[2]</option><option>//input[@name='ts']</option><option>//input</option><option>css=input[name="ts"]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>click</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=fs<datalist><option>name=fs</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='True sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[3]</option><option>//input[@name='fs']</option><option>//input[2]</option><option>css=input[name="fs"]</option></datalist></td><td>0</td>
+</tr>
+<tr><td>click</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=size<datalist><option>name=size</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[2]</option><option>//input[@name='size']</option><option>//input[3]</option><option>css=input[name="size"]</option></datalist></td><td>2</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td>TEST</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::input[5]</option><option>//input[@value='Save']</option><option>//input[5]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:4567/save/TEST<datalist><option>http://localhost:4567/save/test</option><option>http://localhost:4567/</option><option>http://localhost:4567/save/TEST</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/preceding::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='OR'])[1]/preceding::th[3]</option><option>//th</option><option>css=th</option></datalist></td><td>1</td>
+</tr>
+<tr><td>assertText</td><td>id=or<datalist><option>id=or</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='AND'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NAND'])[1]/preceding::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/preceding::th[2]</option><option>//th[@id='or']</option><option>//th[4]</option><option>css=#or</option></datalist></td><td>OR</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[20]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[20]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[20]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[13]</option><option>//tr[3]/td[4]</option></datalist></td><td>1</td>
+</tr>
+<tr><td>assertText</td><td>id=single<datalist><option>id=single</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::th[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='NOR'])[1]/following::th[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::th[1]</option><option>//th[@id='single']</option><option>//th[8]</option><option>css=#single</option></datalist></td><td>SINGLE</td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[24]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='SINGLE'])[1]/following::td[24]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='XOR'])[1]/following::td[24]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/preceding::td[9]</option><option>//tr[3]/td[8]</option></datalist></td><td>1</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT2_TEST3</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td>test</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[5]</option><option>//input[@value='Save']</option><option>//input[5]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:4567/save/wrongtest<datalist><option>http://localhost:4567/save/test</option><option>http://localhost:4567/</option><option>http://localhost:4567/save/wrongtest</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Can', "'", 't find the table.')])[1]/preceding::h1[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Can', "'", 't find the table.')])[1]/preceding::h1[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h1[1]</option><option>//h1</option><option>css=h1</option></datalist></td><td>ERROR</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT2_TEST4</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/save/justForTest<datalist><option>http://localhost:4567/</option><option>http://localhost:4567/save</option><option>http://localhost:4567/save/justForTest</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Can', "'", 't find the table.')])[1]/preceding::h1[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Can', "'", 't find the table.')])[1]/preceding::h1[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main'])[1]/preceding::h1[1]</option><option>//h1</option><option>css=h1</option></datalist></td><td>ERROR</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">EXTRA_CREDIT2_TEST5</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:4567/<datalist><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/following::input[3]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Reload page'])[1]/preceding::input[1]</option><option>//input[@value='Show truth table']</option><option>//input[4]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>name=name<datalist><option>name=name</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[4]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[4]</option><option>//input[@name='name']</option><option>//input[4]</option><option>css=input[name="name"]</option></datalist></td><td>test</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Back to main page'])[1]/following::input[5]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::input[5]</option><option>//input[@value='Save']</option><option>//input[5]</option><option>css=input[type="submit"]</option></datalist></td><td></td>
+</tr>
+<tr><td>open</td><td>http://localhost:4567/save/test<datalist><option>http://localhost:4567/save/test</option><option>http://localhost:4567/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Back to main page<datalist><option>link=Back to main page</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='F'])[37]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='T'])[35]/following::a[1]</option><option>//a[contains(text(),'Back to main page')]</option><option>//a[contains(@href, '/')]</option><option>//a</option><option>css=a</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='False sysmbol:'])[1]/preceding::label[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Size (2^x):'])[1]/preceding::label[2]</option><option>//label</option><option>css=label</option></datalist></td><td>True sysmbol:</td>
 </tr>
 </tbody></table>
 </body>

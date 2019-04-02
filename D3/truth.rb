@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
+set :saved_table, Hash.new
+
 def check_params(ts, fs, size)
   puts 'check_params called..'
   return false if ts.nil? || fs.nil? || size.nil?
@@ -104,10 +106,13 @@ get '/display' do
   ts = params['ts']
   fs = params['fs']
   size = params['size']
+  name = params['name']
 
   ts = 'T' if ts == ''
   fs = 'F' if fs == ''
   size = '3' if size == ''
+
+  settings.saved_table[name] = [ts, fs, size] unless name.nil?
 
   puts params
   if check_params(ts, fs, size)
@@ -116,6 +121,18 @@ get '/display' do
   else
     puts "params bad" 
     erb :error_params
+  end
+end
+
+get '/save/:name' do
+  tname = params[:name]
+  if settings.saved_table.has_key?(tname)
+    ts = settings.saved_table[tname][0]
+    fs = settings.saved_table[tname][1]
+    size = settings.saved_table[tname][2]
+    erb :display, :locals => { ts: ts, fs: fs, size: size}  
+  else
+    erb :not_found
   end
 end
 
